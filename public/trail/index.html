@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Outback Music Trail 2027 – Traveller Guide</title>
+<style>
+  :root {
+    --cream: #F5EDE0;
+    --terracotta: #C45C26;
+    --deep-red: #8B3A2A;
+    --gold: #D4A017;
+    --ink: #2C1810;
+    --soft: #4A3728;
+    --sand: #E8D5B5;
+    --dark: #1A120B;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.5;
+    padding-bottom: 70px;
+  }
+  header {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 1rem 1rem 0.8rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  header img { height: 32px; margin-bottom: 0.3rem; }
+  header h1 { font-size: 1.25rem; font-weight: 700; }
+  header p { font-size: 0.8rem; color: var(--gold); margin-top: 0.15rem; }
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.4rem 0;
+    z-index: 200;
+    border-top: 1px solid #333;
+  }
+  nav button {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.1rem;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+  }
+  nav button.active { color: var(--gold); }
+  nav button span.icon { font-size: 1.15rem; }
+  .section { display: none; padding: 1rem; max-width: 800px; margin: 0 auto; }
+  .section.active { display: block; }
+  .section-logo { text-align: center; margin: 0.2rem 0 0.8rem; }
+  .section-logo img { height: 28px; opacity: 0.85; }
+  h2 { color: var(--deep-red); font-size: 1.35rem; margin: 0.3rem 0 0.8rem; border-bottom: 2px solid var(--terracotta); padding-bottom: 0.25rem; }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 0.9rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .card h3 { font-size: 1.02rem; color: var(--deep-red); margin-bottom: 0.25rem; }
+  .meta { font-size: 0.82rem; color: var(--soft); margin-bottom: 0.35rem; }
+  .badge {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    font-size: 0.68rem;
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-right: 3px;
+    margin-bottom: 2px;
+  }
+  .badge.gold { background: var(--gold); color: var(--dark); }
+  .badge.green { background: #2E7D32; }
+  img.full { width: 100%; border-radius: 10px; margin: 0.4rem 0; }
+  .leg { display: flex; justify-content: space-between; padding: 0.55rem 0; border-bottom: 1px solid #eee; font-size: 0.92rem; }
+  .leg strong { color: var(--ink); }
+  .tip { background: var(--sand); border-left: 4px solid var(--gold); padding: 0.65rem; border-radius: 0 8px 8px 0; margin: 0.5rem 0; font-size: 0.88rem; }
+  a { color: var(--terracotta); text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+  .checklist label { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0.4rem 0; font-size: 0.92rem; cursor: pointer; }
+  .checklist input { margin-top: 0.25rem; accent-color: var(--terracotta); }
+  .park { margin: 0.35rem 0; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<header>
+  <img src="aora_logo_resized.jpg" alt="Australian Offroad Academy">
+  <h1>Outback Music Trail 2027</h1>
+  <p>Charleville → Mount Isa • 8–22 May • ~1,400 km</p>
+</header>
+
+<nav>
+  <button class="active" data-section="home"><span class="icon">🏠</span>Home</button>
+  <button data-section="events"><span class="icon">🎵</span>Events</button>
+  <button data-section="route"><span class="icon">🗺️</span>Route</button>
+  <button data-section="fuel"><span class="icon">⛽</span>Fuel</button>
+  <button data-section="stay"><span class="icon">🏕️</span>Stay</button>
+  <button data-section="tips"><span class="icon">💡</span>Tips</button>
+  <button data-section="prep"><span class="icon">🛠️</span>Prep</button>
+  <button data-section="check"><span class="icon">✅</span>Checklist</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section active">
+  <div class="section-logo"><img src="aora_logo_resized.jpg" alt="AORA"></div>
+  <h2>Welcome Travellers</h2>
+  <div class="card">
+    <p>Self-drive musical road trip through Outback Queensland. Seven towns, live music, big skies and sealed highways along the Landsborough Highway / Matilda Way.</p>
+    <p style="margin-top:0.6rem;"><strong>Super Pass ~$249</strong> — all 7 events + welcome + Dinner Under the Stars.</p>
+    <p style="margin-top:0.4rem;"><a href="https://qldmusictrails.com/trails/the-outback-trail/" target="_blank">Official tickets & info →</a></p>
+  </div>
+  <img src="route_map.jpg" alt="Route map" class="full">
+  <div class="tip">Top up fuel in every major town. Distances between services can be long. Carry water and check RACQ road conditions before each leg.</div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="section">
+  <div class="section-logo"><img src="aora_logo_resized.jpg" alt="AORA"></div>
+  <h2>Event Calendar</h2>
+  <div class="card">
+    <h3>7 May – Welcome Event</h3>
+    <div class="meta">Charleville • Super Pass exclusive</div>
+    <p>Meet fellow travellers and kick off the trail.</p>
+  </div>
+  <div class="card">
+    <h3>8 May – Saddle Up</h3>
+    <div class="meta">Charleville Racecourse</div>
+    <span class="badge">Kingswood</span><span class="badge">Dear Tommie</span><span class="badge">Jess Holbrok</span>
+    <p style="margin-top:0.3rem;"><a href="https://qldmusictrails.com" target="_blank">Tickets →</a></p>
+  </div>
+  <div class="card">
+    <h3>11 May – Bush Dance</h3>
+    <div class="meta">Blackall Woolscour</div>
+    <span class="badge">The Smashing Bumpkins</span>
+    <p style="margin-top:0.3rem;">Music, dance and storytelling in the historic woolscour.</p>
+  </div>
+  <div class="card">
+    <h3>12 May – Outback Exchange</h3>
+    <div class="meta">Barcaldine</div>
+    <p>Legacy-themed conversations and performances.</p>
+  </div>
+  <div class="card">
+    <h3>14 May – Dusty Days</h3>
+    <div class="meta">Qantas Founders Museum, Longreach</div>
+    <span class="badge">Troy Cassar-Daley</span><span class="badge">Kingswood</span><span class="badge">Tori Darke</span>
+    <p style="margin-top:0.3rem;">Celebrating Slim Dusty’s 100th birthday year.</p>
+  </div>
+  <div class="card">
+    <h3>17 May – Diamonds</h3>
+    <div class="meta">Winton • Piano bar</div>
+    <p>Relaxed evening with local and special guest artists.</p>
+  </div>
+  <div class="card">
+    <h3>19 May – Dinner Under the Stars</h3>
+    <div class="meta">Julia Creek • Trail exclusive</div>
+    <p>Long-table gathering with music and food under the outback sky.</p>
+  </div>
+  <div class="card">
+    <h3>22 May – Outback Sounds</h3>
+    <div class="meta">Buchanan Park, Mount Isa</div>
+    <span class="badge">Pete Murray</span><span class="badge">Pierce Brothers</span><span class="badge">Y.O.G.A.</span><span class="badge">Tori Darke</span>
+    <p style="margin-top:0.3rem;">The big finale on the red dirt of Buchanan Park.</p>
+  </div>
+</section>
+
+<!-- ROUTE -->
+<section id="route" class="section">
+  <div class="section-logo"><img src="aora_logo_resized.jpg" alt="AORA"></div>
+  <h2>Route & Distances</h2>
+  <img src="route_map.jpg" alt="Route map" class="full">
+  <div class="card">
+    <div class="leg"><span>Charleville → Blackall</span><strong>303 km • ~3 hrs</strong></div>
+    <div class="leg"><span>Blackall → Barcaldine</span><strong>107 km • ~1 h 10 min</strong></div>
+    <div class="leg"><span>Barcaldine → Longreach</span><strong>108 km • ~1 h 15 min</strong></div>
+    <div class="leg"><span>Longreach → Winton</span><strong>179 km • ~2 hrs</strong></div>
+    <div class="leg"><span>Winton → Julia Creek</span><strong>273 km • ~3 hrs</strong></div>
+    <div class="leg"><span>Julia Creek → Mount Isa</span><strong>258 km • ~3 hrs</strong></div>
+    <p style="margin-top:0.7rem; font-size:0.88rem; color:var(--soft);">Total pure driving ~12–14 hours across free days. Mostly sealed Landsborough Highway / Matilda Way.</p>
+  </div>
+</section>
+
+<!-- FUEL -->
+<section id="fuel" class="section">
+  <div class="section-logo"><img src="aora_logo_resized.jpg" alt="AORA"></div>
+  <h2>Fuel Stops</h2>
+  <div class="tip">Top up in every major town. Don’t rely on smaller stops. Diesel and unleaded widely available; AdBlue in larger centres.</div>
+  <div class="card">
+    <h3>Charleville</h3>
+    <p>BP Charleville, Pie Face, IOR (diesel). Good range of services.</p>
+  </div>
+  <div class="card">
+    <h3>Blackall</h3>
+    <p>BP, Ampol, IOR 24-hour self-serve. EV charging available (Yurika on Shamrock St).</p>
+  </div>
+  <div class="card">
+    <h3>Barcaldine</h3>
+    <p>Fuel available in town. Top up before the longer stretches.</p>
+  </div>
+  <div class="card">
+    <h3>Longreach</h3>
+    <p>BP, Shell, Ampol. Multiple options and longer hours.</p>
+  </div>
+  <div class="card">
+    <h3>Winton</h3>
+    <p>Winton Roadhouse, Ampol. Reliable stop before the longer run north.</p>
+  </div>
+  <div class="card">
+    <h3>Julia Creek</h3>
+    <p>Caltex (Burke Street) – diesel, unleaded, premium.</p>
+  </div>
+  <div class="card">
+    <h3>Mount Isa</h3>
+    <p>Multiple stations including Astron and major brands. Full services.</p>
+  </div>
+  <div class="tip">Longest gaps ~250–300 km. Fill whenever you stop. Check live prices via FuelRadar or local apps.</div>
+</section>
+
+<!-- STAY -->
+<section id="stay" class="section">
+  <div class="section-logo"><img src="aora_logo_resized.jpg" alt="AORA"></div>
+  <h2>Camping & Caravan Parks</h2>
+  <p style="margin-bottom:0.7rem; font-size:0.88rem; color:var(--soft);">Book early for May. Most towns have powered sites, dump points and pet-friendly options. Links open external booking sites where available.</p>
+
+  <div class="card">
+    <h3>Charleville</h3>
+    <span class="badge green">Powered</span><span class="badge">Dump point</span>
+    <div class="park"><strong>Cobb & Co Caravan Park</strong> – central, good facilities, cabins. <a href="https://www.outbackqueensland.com.au/accommodation/cobb-and-co-caravan-park-charleville/" target="_blank">Details →</a></div>
+    <div class="park"><strong>CMCA RV Park / Bush Camp</strong> – self-contained, seasonal (Apr–Oct).</div>
+    <div class="park"><strong>Bailey Bar Caravan Park</strong> – grassy sites, pet-friendly.</div>
+  </div>
+  <div class="card">
+    <h3>Blackall</h3>
+    <span class="badge green">Powered</span>
+    <div class="park"><strong>Blackall Caravan Park</strong> (Garden St) – convenient for the Woolscour event.</div>
+  </div>
+  <div class="card">
+    <h3>Barcaldine</h3>
+    <span class="badge green">Powered</span>
+    <div class="park"><strong>Roses ‘N’ Things Caravan Park</strong> and other town options near the Tree of Knowledge.</div>
+  </div>
+  <div class="card">
+    <h3>Longreach</h3>
+    <span class="badge green">Powered</span><span class="badge">Riverfront</span>
+    <div class="park"><strong>Longreach Caravan Park</strong> (Ibis St) – walk to town.</div>
+    <div class="park"><strong>The Muddy Duck</strong> – Thomson River, larger sites, pet-friendly.</div>
+    <div class="park"><strong>Longreach Tourist Park</strong></div>
+  </div>
+  <div class="card">
+    <h3>Winton</h3>
+    <span class="badge green">Powered</span><span class="badge">Free options</span>
+    <div class="park"><strong>Winton Wanderers</strong>, <strong>Pelican</strong>, <strong>Tattersalls</strong> caravan parks.</div>
+    <div class="park">Free camping at Long Waterhole (check conditions and local rules).</div>
+  </div>
+  <div class="card">
+    <h3>Julia Creek</h3>
+    <span class="badge green">Powered</span>
+    <div class="park"><strong>Julia Creek Caravan Park</strong> – convenient for Dinner Under the Stars. Artesian baths nearby.</div>
+  </div>
+  <div class="card">
+    <h3>Mount Isa</h3>
+    <span class="badge green">Powered</span><span class="badge">Multiple</span>
+    <div class="park"><strong>Discovery Parks – Argylla / Mount Isa</strong></div>
+    <div class="park"><strong>AAOK Moondarra Caravan Park</strong></div>
+    <div class="park"><strong>Sunset Tourist Park</strong></div>
+  </div>
+  <div class="tip">Also check showgrounds, free camps and apps like Camps Australia Wide or WikiCamps for current availability and rules.</div>
+</section>
+
+<!-- TIPS -->
+<section id="tips" class="section">
+  <div class="section-logo"><img src="aora_logo_resized.jpg" alt="AORA"></div>
+  <h2>Practical Tips & Attractions</h2>
+  <div class="card">
+    <h3>Attractions by journey leg</h3>
+    <p style="font-size:0.9rem; margin-bottom:0.6rem;">Expanded guide with official links. Check opening hours and book ahead where noted — May is a busy trail period. Most towns have free days between events for exploring.</p>
+
+    <p><strong>Charleville → Blackall (303 km)</strong><br>
+    • <a href="https://www.cosmoscentre.com/" target="_blank">Charleville Cosmos Centre</a> – Stargazing, planetarium and sun viewing under some of Australia’s darkest skies. Book night sessions.<br>
+    • <a href="https://savethebilbyfund.org.au/charleville-bilby-experience/" target="_blank">Charleville Bilby Experience</a> – Guided tours to meet the endangered greater bilby (nocturnal enclosure).<br>
+    • WWII Secret Base – Immersive tag-along tour of the former top-secret US Air Force base (interactive exhibits and simulated B-17).<br>
+    • En route: <a href="https://www.tamboteddies.com.au/" target="_blank">Tambo Teddies</a> (Tambo) – Handmade sheepskin teddy workshop and store. Stop to watch them being made and take one home.<br>
+    • Blackall highlights: <a href="https://blackallwoolscour.com.au/" target="_blank">Blackall Historical Woolscour</a> (event venue) – Last remaining steam-powered woolscour in Australia. Guided tours available.<br>
+    • Jackie Howe statue (Main St) – Commemorates the legendary blade shearer who set the 1892 record of 321 sheep in under 8 hours.<br>
+    • <a href="https://visitblackalltambo.com.au/blackall-artesian-pool/" target="_blank">Blackall Artesian Aquatic Centre</a> – Naturally heated spa (36–40°C) plus 50 m pool. Ideal recovery after the drive. Low entry fee.</p>
+
+    <p style="margin-top:0.7rem;"><strong>Blackall → Barcaldine (107 km)</strong><br>
+    • Black Stump – Historic surveying marker that gave rise to the Australian saying “beyond the black stump”.<br>
+    • Blackall Sculpture Trail – Outdoor public art around town.<br>
+    • Barcaldine: <a href="https://www.australianworkersheritagecentre.com.au/" target="_blank">Australian Workers Heritage Centre</a> – Dedicated to the lives of working Australians and the 1891 Shearers’ Strike that led to the Labor Party.<br>
+    • <a href="https://www.australianworkersheritagecentre.com.au/discover/tree-of-knowledge-memorial" target="_blank">Tree of Knowledge Memorial</a> – Iconic site under the ghost gum where the Australian Labor Party was founded. Powerful outdoor installation.</p>
+
+    <p style="margin-top:0.7rem;"><strong>Barcaldine → Longreach (108 km)</strong><br>
+    • Ilfracombe (en route): Lynn Cameron Machinery Mile – 800 m open-air museum of historic tractors, engines and farm machinery lining the main street. Free to wander. <a href="https://www.ilfracombehistorical.au/" target="_blank">Details</a><br>
+    • Longreach: <a href="https://www.qfom.com.au/" target="_blank">Qantas Founders Museum</a> – Birthplace story of Qantas, including the famous 747 you can walk on the wing of. Dusty Days concert venue.<br>
+    • <a href="https://stockmanshalloffame.com.au/" target="_blank">Australian Stockman’s Hall of Fame & Outback Heritage Centre</a> – Galleries, live stockman’s show and cinematic experience celebrating outback pioneers. Allow several hours.<br>
+    • Thomson River sunset cruises and station tours (book locally).</p>
+
+    <p style="margin-top:0.7rem;"><strong>Longreach → Winton (179 km)</strong><br>
+    • <a href="https://www.australianageofdinosaurs.com/" target="_blank">Australian Age of Dinosaurs</a> (just before Winton) – World-class fossil museum on a mesa. Collection room, preparation lab and Dinosaur Canyon. Allow 3–4 hours. Combo tickets with Lark Quarry available.<br>
+    • <a href="https://www.experiencewinton.com.au/Waltzing-Matilda-Centre" target="_blank">Waltzing Matilda Centre</a> – The only museum in the world dedicated to a song. Interactive exhibits on Banjo Paterson’s ballad, plus Qantilda Museum and local history.<br>
+    • Lark Quarry Dinosaur Stampede (day trip ~110 km SW) – Only known dinosaur stampede trackway in the world. Book guided access.</p>
+
+    <p style="margin-top:0.7rem;"><strong>Winton → Julia Creek (273 km)</strong><br>
+    • Combo Waterhole (near Kynuna) – Believed to be the billabong that inspired Waltzing Matilda. Short detour.<br>
+    • Julia Creek: <a href="https://qldmusictrails.com/attractions/julia-creek-artesian-baths/" target="_blank">Julia Creek Artesian Baths</a> – Private bathhouses at the caravan park with views of the outback. Book sunset sessions. Mineral-rich water from the Great Artesian Basin.<br>
+    • At the Creek Visitor Information Centre – Meet the rare Julia Creek dunnart (live feeding sessions) and explore interactive local history exhibits.</p>
+
+    <p style="margin-top:0.7rem;"><strong>Julia Creek → Mount Isa (258 km)</strong><br>
+    • Mount Isa: <a href="https://www.outbackatisa.com.au/" target="_blank">Outback at Isa</a> – Hub with Hard Times Mine underground tour (don overalls and descend with an ex-miner guide), Riversleigh Fossil Discovery Centre, Isa Experience heritage displays, Bush Tucker tour and landscaped Outback Park.<br>
+    • <a href="https://www.outbackqueensland.com.au/attractions/lake-moondarra/" target="_blank">Lake Moondarra</a> – Man-made lake 17 km north. Swimming, fishing (barramundi stocked), boating, picnics and birdwatching. Sealed access.<br>
+    • Mount Isa Underground Hospital – WWII-era tunnels (check current access).</p>
+  </div>
+  <div class="card">
+    <h3>Planning notes</h3>
+    <ul style="padding-left:1.1rem; font-size:0.92rem;">
+      <li>Book accommodation early — May is busy with trail travellers.</li>
+      <li>Fuel up in every major town.</li>
+      <li>Check road conditions via <a href="https://www.racq.com.au/road-conditions" target="_blank">RACQ</a> before leaving each day.</li>
+      <li>Suitable for caravan, 4WD and RV (sealed highway).</li>
+      <li>Free days built in between events for exploring.</li>
+      <li>Wildlife hazard at dawn and dusk — slow down.</li>
+      <li>Tickets: <a href="https://qldmusictrails.com/trails/the-outback-trail/" target="_blank">qldmusictrails.com</a></li>
+    </ul>
+  </div>
+  <div class="tip">Super Pass (~$249) covers all events including the exclusive welcome and Dinner Under the Stars. Individual event tickets also available.</div>
+</section>
+
+<!-- PREP -->
+<section id="prep" class="section">
+  <div class="section-logo"><img src="aora_logo_resized.jpg" alt="AORA"></div>
+  <h2>Preparation</h2>
+  <p style="font-size:0.9rem; margin-bottom:0.8rem; color:var(--soft);">Get yourself, your vehicle and your caravan ready for the Outback Trail.</p>
+
+  <div class="card">
+    <h3>Preparing Yourself</h3>
+    <ul style="padding-left:1.1rem; font-size:0.92rem;">
+      <li>Build fitness for long drives – stretch regularly and take breaks every 2 hours</li>
+      <li>Sun protection: wide-brim hat, SPF 50+ sunscreen, long sleeves and sunglasses</li>
+      <li>Hydrate constantly – carry at least 4–5 litres of water per person per day</li>
+      <li>Personal first-aid kit + any prescription medications (with extras)</li>
+      <li>Mental readiness: remote areas mean limited mobile coverage and services</li>
+      <li>Clothing layers – hot days, cool nights in May outback</li>
+      <li>Share your itinerary with someone at home and check in when possible</li>
+      <li>Insect repellent, lip balm, and a good pair of boots or sturdy shoes</li>
+      <li>Cash is king in smaller towns – ATMs can be unreliable</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Preparing Your Car</h3>
+    <ul style="padding-left:1.1rem; font-size:0.92rem;">
+      <li>Full mechanical service before departure (oil, filters, belts, brakes, cooling system)</li>
+      <li>Tyres: good tread depth, two spares recommended, pressure gauge and repair kit</li>
+      <li>Check battery, alternator and all lights/indicators</li>
+      <li>Air filter and radiator – dust is constant on outback roads</li>
+      <li>Recovery gear if 4WD: snatch strap, shackles, shovel, traction boards</li>
+      <li>Fuel strategy: long-range tank or jerry cans – fill up in every major town</li>
+      <li>UHF radio fitted and programmed (channel 40 for roadtrains)</li>
+      <li>Tool kit, spare belts, hoses, fuses and basic spares</li>
+      <li>Check tow hitch, wiring and brake controller if towing</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Preparing Your Caravan</h3>
+    <ul style="padding-left:1.1rem; font-size:0.92rem;">
+      <li>Service bearings, brakes, suspension and coupling before the trip</li>
+      <li>Tyres in good condition with a spare that matches the caravan</li>
+      <li>Electrical system: check battery health, solar if fitted, fridge operation</li>
+      <li>Water tanks full, waste valves working, and spare water container</li>
+      <li>Load correctly – heavy items low and over the axles, stay within ATM</li>
+      <li>Safety: breakaway cable, safety chains, wheel chocks and levelling blocks</li>
+      <li>Dust seals on doors/windows and check for leaks</li>
+      <li>Spare parts: bulbs, fuses, gas fittings, wheel bearings if possible</li>
+      <li>Stabiliser legs, awning and any external fittings secured for travel</li>
+      <li>Practice hitching and unhitching before you leave home</li>
+    </ul>
+  </div>
+
+  <div class="tip">Complete these checks well before you leave. Remote recovery is expensive and slow — prevention is far better than a roadside fix.</div>
+</section>
+
+<!-- CHECKLIST -->
+<section id="check" class="section">
+  <div class="section-logo"><img src="aora_logo_resized.jpg" alt="AORA"></div>
+  <h2>Traveller Checklist</h2>
+  <div class="card checklist">
+    <label><input type="checkbox"> Tickets / Super Pass booked</label>
+    <label><input type="checkbox"> Accommodation reserved in each town</label>
+    <label><input type="checkbox"> Personal fitness & sun protection packed</label>
+    <label><input type="checkbox"> First-aid kit + medications ready</label>
+    <label><input type="checkbox"> Vehicle full service & tyres checked</label>
+    <label><input type="checkbox"> Caravan bearings, brakes & coupling serviced</label>
+    <label><input type="checkbox"> Extra water & jerry cans packed</label>
+    <label><input type="checkbox"> UHF radio checked (channel 40)</label>
+    <label><input type="checkbox"> Fuel plan noted (fill every town)</label>
+    <label><input type="checkbox"> RACQ road conditions checked</label>
+    <label><input type="checkbox"> Emergency contacts & offline maps saved</label>
+    <label><input type="checkbox"> Recovery gear & basic spares packed</label>
+    <label><input type="checkbox"> Event venues & times confirmed</label>
+    <label><input type="checkbox"> Wildlife awareness (dawn/dusk driving)</label>
+  </div>
+  <div class="tip">Tick items as you go. This checklist stays in your browser until you clear data.</div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('.section');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.section).classList.add('active');
+      window.scrollTo(0, 0);
+    });
+  });
+
+  // Persist checklist
+  const checks = document.querySelectorAll('.checklist input');
+  checks.forEach((cb, i) => {
+    const key = 'omt2027_check_' + i;
+    cb.checked = localStorage.getItem(key) === '1';
+    cb.addEventListener('change', () => {
+      localStorage.setItem(key, cb.checked ? '1' : '0');
+    });
+  });
+</script>
+</body>
+</html>
